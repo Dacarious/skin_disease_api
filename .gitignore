@@ -1,0 +1,6 @@
+__pycache__/
+best_model.pth
+test.jpg
+.skin/
+infer.py
+load.py
