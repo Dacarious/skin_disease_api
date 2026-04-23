@@ -6,7 +6,7 @@ from PIL import Image
 import io
 
 # loading the saved model
-checkpoint = torch.load("model_final.pth", map_location="cpu")
+checkpoint = torch.load("model_final1.pth", map_location="cpu")
 
 model = models.efficientnet_b0(weights=None)
 model.classifier[1] = nn.Linear(

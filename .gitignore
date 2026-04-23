@@ -4,3 +4,5 @@ test.jpg
 .skin/
 infer.py
 load.py
+main.pth
+model_final.pth
