@@ -4,6 +4,9 @@ import torch.nn as nn
 from torchvision import models, transforms
 from PIL import Image
 import io
+from fastapi.middleware.cors import CORSMiddleware
+
+
 
 # loading the saved model
 checkpoint = torch.load("model_final1.pth", map_location="cpu")
@@ -36,6 +39,15 @@ app = FastAPI(
     description="Upload a skin image and get prediction",
     version="1.0"
 )
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # allow all (for now)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @app.get("/")
 def home():
